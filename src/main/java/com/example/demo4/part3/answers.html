@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+    Part 3.1:
+    public void split(ArrayList<Integer> pList, ArrayList<Integer> pEvenList, ArrayList<Integer> pOddList) {
+    for (int n : pList) {
+    if (n % 2 == 0) pEvenList.add(n);
+    else pOddList.add(n); }
+    }
+
+    Part 3.2:
+    Function f(n)f(n):
+
+    The key operation (if (n % 2 == 0)) is performed once for each element in pList.
+    Therefore, if pList contains nn elements, the function f(n)f(n) that represents the number of times
+    the key operation is performed is simply:
+    f(n)=nf(n)=n
+    Worst Case Time Complexity:
+    The time complexity of the split() method is determined by the number of times the key operation is performed,
+    which is f(n)f(n). Since f(n)=nf(n)=n, the worst case time complexity is:
+    O(n)O(n)
+    This means the algorithm scales linearly with the size of the input list pList.
+
+    Part 3.3:
+    Would the time complexity change if pList were sorted into ascending order?
+
+    No, the time complexity would not change if the elements of pList were sorted into ascending
+    order. The split() method's logic for determining whether an element is even or odd (if (n % 2 == 0)) does
+    not depend on the order of the elements in pList. Each element is checked independently, and the even/odd check
+    operation is performed exactly once per element.
+    Therefore, whether pList is sorted or not, the time complexity remains:
+    O(n)O(n)
+    Summary
+
+    Key Operation: if (n % 2 == 0)
+    Function f(n)f(n): nn
+    Time Complexity: O(n)O(n)
+    Effect of Sorted Input: No change in time complexity; remains O(n)O(n)
+
+    The linear time complexity reflects that each element in the input list is processed exactly once, regardless of the input order.
